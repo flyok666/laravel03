@@ -45,3 +45,9 @@ Route::post('/admin/update/{id}','AdminController@update');
 //shanchu 删除账号
 Route::get('/admin/delete/{id}','AdminController@delete');
 
+//登录
+Route::get('/login','UserController@login');
+Route::post('/store','UserController@store');
+//退出
+Route::get('/logout','UserController@logout');
+
