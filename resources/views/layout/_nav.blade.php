@@ -16,6 +16,7 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
                 <li><a href="#">Link</a></li>
+                @auth
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">学生管理 <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -24,6 +25,7 @@
 
                     </ul>
                 </li>
+                    @endauth
             </ul>
             <form class="navbar-form navbar-left">
                 <div class="form-group">

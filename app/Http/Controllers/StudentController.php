@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     //学生列表
     public function index()
     {
@@ -31,10 +35,16 @@ class StudentController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'age' => 'required|integer',
+            'sex'=> 'required',
+            'city'=> 'required',
+            'description'=> 'required',
         ],[//错误提示信息
             'name.required'=>'姓名不能为空',
             'age.required'=>'年龄不能为空',
             'age.integer'=>'年龄必须是整数',
+            'sex.required'=>'性别不能为空',
+            'city.required'=>'城市不能为空',
+            'description.required'=>'个人简介不能为空',
         ]);
         //验证失败，会跳转回表单页面
         //验证通过，继续往下执行
@@ -47,6 +57,9 @@ class StudentController extends Controller
         $student = new Student();
         $student->name = $request->name;
         $student->age = $request->age;
+        $student->sex = $request->sex;
+        $student->city = $request->city;
+        $student->description = $request->description;
         $student->save();
         //echo '保存成功';
         //跳转到学生列表页    带上操作提示信息

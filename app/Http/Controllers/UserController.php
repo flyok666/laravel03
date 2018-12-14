@@ -33,7 +33,7 @@ class UserController extends Controller
             return redirect('/admin/index')->with('success','登录成功');
         }
         //验证失败，提示错误信息
-        return redirect('/login')->with('danger','登录失败');
+        return redirect('/login')->with('danger','登录失败,用户名或密码错误');
     }
 
     //退出登录
