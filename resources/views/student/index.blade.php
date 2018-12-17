@@ -4,12 +4,21 @@
 
 
     <h1>学生列表</h1>
+    <form method="get" action="/student/index" class="form-inline">
+        <div class="form-group">
+            <label>姓名</label>
+            <input type="text" class="form-control" name="name">
+        </div>
+
+        <button type="submit" class="btn btn-default">查找</button>
+    </form>
     <table class="table table-bordered">
         <tr>
             <th>ID</th>
             <th>姓名</th>
             <th>头像</th>
             <th>年龄</th>
+            <th>学校</th>
             <th>操作</th>
         </tr>
         @foreach ($students as $student)
@@ -18,6 +27,7 @@
                 <td>{{ $student->name }}</td>
                 <td><img src="{{ $student->head }}" /> </td>
                 <td>{{ $student->age }}</td>
+                <td>{{ $student->school_id?$student->school->name:'-' }}</td>
 
                 <td>
                     <a href="/student/edit/{{ $student->id }}" >编辑</a>
@@ -38,5 +48,5 @@
             <td>编辑 查看</td>
         </tr>--}}
     </table>
-        {{ $students->links() }}
+        {{ $students->appends(['name'=>$name])->links() }}
 @stop

@@ -38,6 +38,15 @@
             </select>
         </div>
         <div class="form-group">
+            <label>学校</label>
+            <select name="school_id" class="form-control">
+                @foreach($schools as $school)
+                <option value="{{ $school->id }}" @if(old('school_id')==$school->id) selected="selected" @endif>{{ $school->name }}</option>
+
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group">
             <label>个人介绍</label>
             <textarea name="description" class="form-control" rows="3">{{ old('description') }}</textarea>
         </div>
