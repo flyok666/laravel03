@@ -42,7 +42,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ auth()->user()->username }} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">个人中心</a></li>
-                        <li><a href="#">修改密码</a></li>
+                        <li><a href="/password">修改密码</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="/logout">退出</a></li>
                     </ul>

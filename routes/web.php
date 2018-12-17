@@ -51,3 +51,7 @@ Route::post('/store','UserController@store');
 //退出
 Route::get('/logout','UserController@logout');
 
+//修改密码
+Route::get('/password','UserController@password');
+Route::post('/updatePw','UserController@updatePw');
+
